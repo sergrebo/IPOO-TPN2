@@ -1,20 +1,20 @@
 <?php
 //s
 class Cola{
-    private $objMostrador;
+    //private $objMostrador;
     private $nroMaxClientes;
     private $arrayClientes;
 
-    public function __construct($objMostrador, $nroMaxClientes, $arrayClientes)
+    public function __construct(/*$objMostrador,*/ $nroMaxClientes, $arrayClientes)
     {
-        $this->objMostrador=$objMostrador;
+        /*$this->objMostrador=$objMostrador;*/
         $this->nroMaxClientes=$nroMaxClientes;
         $this->arrayClientes=$arrayClientes;
     }
 
-    public function getObjMostrador(){
+    /*public function getObjMostrador(){
         return $this->objMostrador;
-    }
+    }*/
     public function getNroMaxClientes(){
         return $this->nroMaxClientes;
     }
@@ -22,9 +22,9 @@ class Cola{
         return $this->arrayClientes;
     }
 
-    public function setObjMostrador($nvoMostrador){
+    /*public function setObjMostrador($nvoMostrador){
         $this->objMostrador=$nvoMostrador;
-    }
+    }*/
     public function setNroMaxClientes($nvoNroMaxClientes){
         $this->nroMaxClientes=$nvoNroMaxClientes;
     }
@@ -34,7 +34,7 @@ class Cola{
 
     public function __toString()
     {
-        return "Cola de ". $this->getObjMostrador(). " - ". $this->getNroMaxClientes(). " - ". $this->getArrayClientes();       //Necesito un metodo para listar los componentes del arreglo
+        return "Cola ". $this->getNroMaxClientes(). " - ". $this->getArrayClientes();       //Necesito un metodo para listar los componentes del arreglo
     }
 }
 ?>

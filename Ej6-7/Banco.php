@@ -46,5 +46,25 @@ class Banco{
         }
         return $arregloMostradoresAtienden;
     }
+
+    public function mejorMostradorPara($unTramite){
+        $menorNroClientes=1000;
+        $arregloMostradoresAtienden=$this->mostradoresQueAtienden($unTramite);
+        for ($i=0; $i<count($arregloMostradoresAtienden) ; $i++) { 
+            if (count($arregloMostradoresAtienden[$i]->getObjCola()->getArrayClientes()) < $menorNroClientes){
+                $menorNroClientes=count($arregloMostradoresAtienden[$i]->getObjCola()->getArrayClientes());
+                $mejorCola=$arregloMostradoresAtienden[$i]->getCodigo();
+            };
+            
+        }
+        return $mejorCola;
+    }
+
+    /** Cuando llega un cliente al banco se lo ubica en el mostrador que atienda el trámite que el cliente requiere, que tenga espacio y la menor cantidad de clientes esperando; si no hay lugar en ningún mostrador debe retornar un mensaje que diga al cliente que “será antendido en cuanto haya lugar en un mostrador”
+     * 
+     */
+    public function atender($unCliente){
+
+    }
 }
 ?>

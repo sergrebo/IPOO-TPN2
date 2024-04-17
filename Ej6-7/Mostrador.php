@@ -3,11 +3,13 @@
 class Mostrador{
     private $codigo;
     private $arrayTramites;
+    private $objCola;
     
-    public function __construct($codigo, $arrayTramites)
+    public function __construct($codigo, $arrayTramites, $objCola)
     {
         $this->codigo=$codigo;
         $this->arrayTramites=$arrayTramites;
+        $this->objCola=$objCola;
     }
 
     public function getCodigo(){
@@ -16,6 +18,9 @@ class Mostrador{
     public function getArrayTramites(){
         return $this->arrayTramites;
     }
+    public function getObjCola(){
+        return $this->objCola;
+    }
 
     public function setCodigo($nvoCodigo){
         $this->codigo=$nvoCodigo;
@@ -23,10 +28,13 @@ class Mostrador{
     public function setArrayTramites($nvoArrayTramites){
         $this->arrayTramites=$nvoArrayTramites;
     }
+    public function setObjCola($nvoObjCola){
+        $this->objCola=$nvoObjCola;
+    }
 
     public function __toString()
     {
-        return "Mostrador ". $this->getCodigo(). " - Tramita ". $this->getArrayTramites();      //Necesito un metodo para listar los elementos del arreglo
+        return "Mostrador ". $this->getCodigo(). " - Tramita ". $this->getArrayTramites(). " - ". $this->getObjCola();      //Necesito un metodo para listar los elementos del arreglo
     }
 
     public function atiende($unTramite){
